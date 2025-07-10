@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, FormControl, Validators } from '@angular/forms';
+import { loginService } from '../../service/login';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -9,6 +11,9 @@ import { FormGroup, ReactiveFormsModule, FormControl, Validators } from '@angula
   styleUrl: './login-form.css'
 })
 export class LoginForm {
+  loginService = inject(loginService);
+  router = inject(Router);
+
 
   loginForm = new FormGroup({
     nome: new FormControl('', Validators.required),
@@ -21,8 +26,21 @@ export class LoginForm {
       alert('Por favor, preencha os campos de nome e senha corretamente.');
       return;
     }
-    console.log('Nome:', nome);
-    console.log('Senha:', senha);
+    this.loginService.login(nome, senha).subscribe
+    ({ 
+      error: (err) => {
+        if (err.status === 401) {
+          alert('O nome de usuário ou senha está incorreto ou não foi cadastrado!')
+          return;
+        }
+        
+          alert('erro interno do servidor tente novamente mais tarde!')
+        
+      },
+      next: () => {
+        this.router.navigate(['/home'])
+      }
+    })
     
   }
 }
