@@ -1,1 +1,14 @@
-<p>menu works!</p>
+<button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+  Menu
+</button>
+
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Ford Enter</h5>
+    
+  </div>
+  <div class="offcanvas-body">
+   <button class= "btn btn-primary" (click)="goToDashboard()">Dashboard</button>
+   <a href="/dashboard"></a>
+  </div>
+</div>
