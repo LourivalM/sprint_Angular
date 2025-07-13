@@ -2,11 +2,15 @@
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Nome</label>
     <input formControlName="nome" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-      </div>
+  </div>
   <div class="mb-3">
     <label for="exampleInputPassword1" class="form-label">Senha</label>
     <input formControlName="senha" type="password" class="form-control" id="exampleInputPassword1">
   </div>
-
+  <!-- GEMINI_MODIFICATION: Adicionado checkbox para a funcionalidade 'Manter conectado' -->
+  <div class="mb-3 form-check">
+    <input formControlName="manterConectado" type="checkbox" class="form-check-input" id="manterConectadoCheck">
+    <label class="form-check-label" for="manterConectadoCheck">Manter conectado</label>
+  </div>
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>

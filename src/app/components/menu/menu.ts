@@ -1,9 +1,6 @@
-import { Component } from '@angular/core';
-import { inject } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { routes } from '../../app.routes';
-
-
+import { loginService } from '../../service/login'; // Importar o loginService
 
 @Component({
   selector: 'app-menu',
@@ -13,8 +10,16 @@ import { routes } from '../../app.routes';
 })
 export class Menu {
   router = inject(Router);
+  // GEMINI_MODIFICATION: Injetado loginService para funcionalidade de logout
+  loginService = inject(loginService); 
+
   goToDashboard() {
     this.router.navigate(['/dashboard']);
   }
 
+  // GEMINI_MODIFICATION: Implementado método logout para limpar sessão e redirecionar
+  logout() {
+    this.loginService.logout();
+    this.router.navigate(['/login']); 
+  }
 }

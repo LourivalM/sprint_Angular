@@ -7,8 +7,10 @@
     <h5 class="offcanvas-title" id="offcanvasExampleLabel">Ford Enter</h5>
     
   </div>
-  <div class="offcanvas-body">
+  <div class="offcanvas-body d-flex flex-column">
    <button class= "btn btn-primary" (click)="goToDashboard()">Dashboard</button>
    <a href="/dashboard"></a>
+   <!-- GEMINI_MODIFICATION: Adicionado botão de Logout -->
+   <button class="btn btn-danger mt-auto w-100" (click)="logout()">Logout</button>
   </div>
 </div>

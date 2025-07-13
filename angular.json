@@ -63,6 +63,11 @@
         },
         "serve": {
           "builder": "@angular/build:dev-server",
+          "options": {
+            // GEMINI_MODIFICATION: Configuração de proxy para o servidor de desenvolvimento.
+            // Redireciona requisições para a API e lida com o fallback de histórico para rotas do Angular.
+            "proxyConfig": "proxy.conf.json"
+          },
           "configurations": {
             "production": {
               "buildTarget": "sprint_Angular:build:production"

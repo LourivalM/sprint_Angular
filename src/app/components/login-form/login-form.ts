@@ -17,16 +17,20 @@ export class LoginForm {
 
   loginForm = new FormGroup({
     nome: new FormControl('', Validators.required),
-    senha: new FormControl('', Validators.required)
+    senha: new FormControl('', Validators.required),
+    // GEMINI_MODIFICATION: Adicionado FormControl para o checkbox 'Manter conectado'
+    manterConectado: new FormControl(false)
   });
 
  onSubmitLogin() {
-    const { nome, senha } = this.loginForm.value;
+    // GEMINI_MODIFICATION: Desestruturação para incluir 'manterConectado'
+    const { nome, senha, manterConectado } = this.loginForm.value;
     if (!this.loginForm.valid || !nome || !senha){
       alert('Por favor, preencha os campos de nome e senha corretamente.');
       return;
     }
-    this.loginService.login(nome, senha).subscribe
+    // GEMINI_MODIFICATION: Passando o valor de 'manterConectado' para o serviço de login
+    this.loginService.login(nome, senha, manterConectado || false).subscribe
     ({ 
       error: (err) => {
         if (err.status === 401) {
