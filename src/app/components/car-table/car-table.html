@@ -14,13 +14,14 @@
       <tbody>
         <tr>
             <td>
-                <input type="text">
+                <input (change)="onChangeVin($event)" type="text" placeholder="{{ vin }}" value="{{ vin }}">
+               
             </td>
-            <td class="p3">80000Km</td>
-            <td class="p3">90%</td>
-            <td class="p3">ON</td>
-            <td class="p3">>-32.2831</td>
-            <td class="p3">-14.1625</td>
+            <td class="p3">{{odometro}}Km</td>
+            <td class="p3">{{nivelCombustivel}}%</td>
+            <td class="p3">{{status.toUpperCase()}}</td>
+            <td class="p3">>{{lat}}</td>
+            <td class="p3">{{long}}</td>
         </tr>
 
       </tbody>

@@ -1,24 +1,31 @@
 <section class=" d-flex gap-3 justify-content-around ">
   <div class="shadow border border-light p-3">
     <h2>Veículos</h2>
-    <select>
-      <option value="">Territory</option>
-      <option value="">Mustang</option>
-      <option value="">Bronco</option>
-      <option value="">Ranger</option>
+    <select (change)="onChangeSelect($event)">
+      @for (v of veiculos; track v.id) {
+        <option value="{{v.id}}">{{v.vehicle}}</option>
+
+      }
     </select>
   </div>
   
 
-  <app-card></app-card>
-  <app-card></app-card>
-  <app-card></app-card>
+  <app-card [title]="'Total de Vendas'" [valor]="veiculoSelected.volumetotal" ></app-card>
+  <app-card [title]="'Conectados' " [valor]="veiculoSelected.connected"></app-card>
+  <app-card [title]="'Software Updates' "[valor]="veiculoSelected.softwareUpdates"></app-card>
 
   </section>
 <section>
-    <img class=" background-image" src="http://localhost:3001/Mustang.png" alt="">
+    <img src="{{ veiculoSelected.img }}" alt="">
   </section>
    <section>
-    <app-car-table></app-car-table>
+    <app-car-table 
+      [vin]="veiculoSelected.vin" 
+      [odometro]="vinInfos.odometro" 
+      [nivelCombustivel]="vinInfos.nivelCombustivel" 
+      [status]="vinInfos.status" 
+      [lat]="vinInfos.lat" 
+      [long]="vinInfos.long">
+    </app-car-table>
   </section>
 
