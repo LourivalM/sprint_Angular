@@ -1,16 +1,16 @@
-<form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()" class="shadow border border-light p-3">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Nome</label>
-    <input formControlName="nome" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+<form [formGroup]="loginForm" (ngSubmit)="onSubmitLogin()" class="login-form-wrapper">
+  <div class="input-group mb-3 w-100">
+    <span class="input-group-text"><img src="/img/usuario.png" alt="Usuário" style="height: 20px;"></span>
+    <input formControlName="nome" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nome">
   </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Senha</label>
-    <input formControlName="senha" type="password" class="form-control" id="exampleInputPassword1">
+  <div class="input-group mb-3 w-100">
+    <span class="input-group-text"><img src="/img/cadeado.png" alt="Senha" style="height: 20px;"></span>
+    <input formControlName="senha" type="password" class="form-control" id="exampleInputPassword1" placeholder="Senha">
   </div>
   <!-- GEMINI_MODIFICATION: Adicionado checkbox para a funcionalidade 'Manter conectado' -->
-  <div class="mb-3 form-check">
+  <div class="form-check mb-3 w-100">
     <input formControlName="manterConectado" type="checkbox" class="form-check-input" id="manterConectadoCheck">
     <label class="form-check-label" for="manterConectadoCheck">Manter conectado</label>
   </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+  <button type="submit" class="btn btn-primary w-100">Entrar</button>
 </form>
