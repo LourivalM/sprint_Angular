@@ -2,10 +2,6 @@ import { Routes } from '@angular/router';
 import { loginGuard } from './guards/login-guard';
 
 export const routes: Routes = [
-    // GEMINI_MODIFICATION: Configuração de rotas da aplicação.
-    // A rota raiz ('') é protegida pelo loginGuard e carrega o componente Home se autenticado.
-    // A rota '/login' não é protegida, permitindo acesso para autenticação.
-    // Outras rotas protegidas (home, dashboard) também usam o loginGuard.
     {
         path: '',
         canActivate: [loginGuard],

@@ -42,7 +42,6 @@
     padding: 20px;
     box-sizing: border-box;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
-    border: 1px solid var(--ford-blue); /* Subtle blue border */
 }
 
 .login-image-responsive {
@@ -53,7 +52,7 @@
 .login-ford-logo-section {
     /* Removed width: 100%; */
     padding-top: 20px; /* Espaçamento do topo */
-    margin: 0 auto; /* Centraliza horizontalmente */
+    margin: 0 auto;
 }
 
 .login-welcome-message {

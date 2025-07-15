@@ -1,6 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 :root {
     --aquamarine: #7FFFD4; /* Definindo a cor aquamarine */
+    --ford-blue: #003366; /* Definindo a cor azul da Ford */
 }
 
 *{

@@ -17,7 +17,10 @@ export class Menu {
     this.router.navigate(['/dashboard']);
   }
 
-  // GEMINI_MODIFICATION: Implementado método logout para limpar sessão e redirecionar
+  goToHome() {
+    this.router.navigate(['/home']);
+  }
+
   logout() {
     this.loginService.logout();
     this.router.navigate(['/login']); 

@@ -31,7 +31,5 @@ export class loginService {
   logout(): void {
     sessionStorage.removeItem('email');
     localStorage.removeItem('email');
-    // Redirecionar para a página de login. O Router precisa ser injetado aqui.
-    // Para evitar um erro de dependência circular, faremos isso no componente que chama o logout.
-  }
+}
 }

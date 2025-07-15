@@ -25,5 +25,5 @@
 /* GEMINI_MODIFICATION: Desativar estilo active por enquanto */
 .btn.navbar-toggler:active {
   /* Nenhuma alteração de estilo para active por enquanto */
-  box-shadow: none; /* Remover sombra no active para evitar conflito */
+  box-shadow: none;
 }

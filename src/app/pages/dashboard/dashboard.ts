@@ -4,10 +4,11 @@ import { Card } from '../../components/card/card';
 import { CarTable } from '../../components/car-table/car-table';
 import { DashBoard } from '../../service/dashboard';
 import { veiculo, vinInfos } from '../../models/car';
+import { Menu } from '../../components/menu/menu';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [CommonModule, Card, CarTable],
+  imports: [CommonModule, Card, CarTable, Menu],
   templateUrl: './dashboard.html',
   styleUrl: './dashboard.css'
 })

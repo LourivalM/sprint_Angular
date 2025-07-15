@@ -29,7 +29,6 @@ export class LoginForm {
       alert('Por favor, preencha os campos de nome e senha corretamente.');
       return;
     }
-    // GEMINI_MODIFICATION: Passando o valor de 'manterConectado' para o serviço de login
     this.loginService.login(nome, senha, manterConectado || false).subscribe
     ({ 
       error: (err) => {
@@ -42,6 +41,9 @@ export class LoginForm {
         
       },
       next: () => {
+        localStorage.setItem('showWelcomeOverlay', 'true'); // Set flag
+        localStorage.setItem('welcomeMessage', 'Você está logado, seja bem-vindo'); // Set custom message
+        console.log('localStorage set: showWelcomeOverlay=', localStorage.getItem('showWelcomeOverlay'), 'welcomeMessage=', localStorage.getItem('welcomeMessage'));
         this.router.navigate(['/home'])
       }
     })

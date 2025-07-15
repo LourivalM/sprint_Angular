@@ -23,8 +23,6 @@ export class App {
   showContent = false;
 
   constructor() {
-    // GEMINI_MODIFICATION: Verifica o estado de login na inicialização e em cada navegação.
-    // Isso garante que o conteúdo só seja exibido após a verificação de autenticação.
     if (isPlatformBrowser(this.platformId)) {
       this.checkLoginStatus();
 

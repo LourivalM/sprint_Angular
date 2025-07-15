@@ -1,3 +1,3 @@
 <app-bem-vindo></app-bem-vindo>
 <app-menu></app-menu>
-
+<app-welcome-overlay *ngIf="showWelcomeOverlay" [message]="welcomeMessage" (closed)="onWelcomeOverlayClosed()"></app-welcome-overlay>
